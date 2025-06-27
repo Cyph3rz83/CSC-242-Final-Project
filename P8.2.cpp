@@ -64,12 +64,12 @@ int main() {
     vector<string> dictionary; // dictionary word vector
     string word; 
 
-    // cictionary path
+    // dictionary path
     string dictPath = R"(dictionary.txt)";
     ifstream dictFile( dictPath ); // open directory
 
     if ( !dictFile.is_open() ) { // pretty self-explanatory
-        cerr << "❌ Error opening dictionary file." << endl;
+        cerr << "Error opening dictionary file." << endl;
         return 1; 
     }
 
@@ -86,7 +86,7 @@ int main() {
     ifstream textFile( inputPath ); // Open the input file
 
     if ( !textFile.is_open() ) { 
-        cerr << "❌ Error opening text file." << endl;
+        cerr << "Error opening text file." << endl;
         return 1; 
     }
 
@@ -102,7 +102,7 @@ int main() {
             string suggestion = suggestWord( cleaned , dictionary ); // Try to suggest a similar word
             if ( !suggestion.empty() ) { // if there is a suggestion show it
                 cout << "Misspelled word: " << cleaned
-                    << " → Did you mean: " << suggestion << "?" << endl;
+                    << "Did you mean: " << suggestion << "?" << endl;
             }
             else {
                 // or just show the word is miss-spelled
